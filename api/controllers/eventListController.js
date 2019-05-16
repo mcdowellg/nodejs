@@ -25,8 +25,8 @@ fs.readFile('D:/home/site/wwwroot/api/controllers/M10Triplebank.geojson', functi
 
   let bufferOriginal = Buffer.from(JSON.parse(Blk).data);
   console.log(bufferOriginal);
-
-  res.status(200).json(bufferOriginal);
+  jsonOut = bufferOriginal.toString('utf8')
+  res.status(200).json(jsonOut);
 })
   // var a =  "get this working";
   
