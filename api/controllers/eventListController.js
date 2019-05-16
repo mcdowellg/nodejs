@@ -1,8 +1,8 @@
 const Event = require("../models/Event");
 const List = require("../models/List");
 const GPS = require("../models/GPS");
-const M10 = require("../../M10 Triplebank.geojson");
-const M11 = require("../../M11 Triplebank.geojson");
+const fs = require('fs');
+// const M11 = require("../../M11Triplebank.geojson");
 
 
 exports.listAllLists = (req, res) => {
@@ -16,10 +16,14 @@ exports.listAllLists = (req, res) => {
 };
 
 exports.listAllBlocks = (req, res) => {
-
-  console.log(M10);
-  return M10;
-  
+// fs.readFile('../../M10Triplebank.geojson', function(err, M10){
+//   if(err){
+//   console.log("error in loading geojson");
+//   }
+//   console.log(M10);
+//   return M10;
+// })
+  console.log("get this working")
   // Article.$where('this.firstname === this.lastname')
   // Blocks.find({}, (err, article) => {
   //   if (err) {
