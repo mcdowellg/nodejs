@@ -17,14 +17,15 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-var out = fs.readFileSync('M10Triplebank.geojson')
-
-  console.log(out);
-  res.status(200).json("get this working");
+fs.readFile('M10Triplebank.geojson', function(err, Blk){
+  if(err){
+  res.status(500).send(err);
+  }
+  console.log(Blk);
   
-
+})
   // var a =  "get this working";
-  
+  res.status(200).json("get this working");
   
   // Article.$where('this.firstname === this.lastname')
   // Blocks.find({}, (err, article) => {
