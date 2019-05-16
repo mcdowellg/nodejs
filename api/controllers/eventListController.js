@@ -17,7 +17,7 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-fs.readFile('D:/home/site/wwwroot/api/controllers/GeojsonBlocks/PRW NZ Vineyards.geojson', "utf8", function(err, Blk){
+fs.readFile('D:/home/site/wwwroot/api/controllers/GeojsonBlocks/PRWNZVineyards.geojson', "utf8", function(err, Blk){
   if(err){
   res.status(500).send(err);
   }
