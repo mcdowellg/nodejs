@@ -17,7 +17,7 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-fs.readFile('./M10Triplebank.geojson', function(err, Blk){
+fs.readFile('M10Triplebank.geojson', function(err, Blk){
   if(err){
   res.status(500).send(err);
   }
