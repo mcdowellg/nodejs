@@ -17,14 +17,12 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-fs.readFile('M10Triplebank.geojson', function(err, Blk){
-  if(err){
-  res.status(500).send(err);
-  }
-  console.log(Blk);
+var out = fs.readFileSync('M10Triplebank.geojson')
+
+  console.log(out);
   res.status(200).json("get this working");
   
-})
+
   // var a =  "get this working";
   
   
