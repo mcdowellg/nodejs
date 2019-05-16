@@ -22,7 +22,7 @@ fs.readFile('D:/home/site/wwwroot/api/controllers/M10Triplebank.geojson', functi
   res.status(500).send(err);
   }
   console.log(Blk);
-  res.status(200).Blk;
+  res.status(200).json(Blk);
 })
   // var a =  "get this working";
   
