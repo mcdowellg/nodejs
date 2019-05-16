@@ -23,10 +23,10 @@ fs.readFile('../../M10Triplebank.geojson', function(err, Blk){
   }
   console.log(Blk);
   this.block =  Blk;
-  var a =  "get this working";
-  res.status(200).json(a);
+  
 })
-
+  var a =  "get this working";
+  res.status(200).json(block);
   
   // Article.$where('this.firstname === this.lastname')
   // Blocks.find({}, (err, article) => {
