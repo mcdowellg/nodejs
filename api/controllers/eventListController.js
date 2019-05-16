@@ -17,12 +17,12 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-fs.readFile('D:/home/site/wwwroot/api/controllers/test.txt', function(err, Blk){
+fs.readFile('D:/home/site/wwwroot/api/controllers/M10Triplebank.geojson', function(err, Blk){
   if(err){
   res.status(500).send(err);
   }
   console.log(Blk);
-  res.status(200).json(Blk);
+  res.status(200).Blk;
 })
   // var a =  "get this working";
   
