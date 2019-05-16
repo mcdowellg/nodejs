@@ -16,16 +16,16 @@ exports.listAllLists = (req, res) => {
 };
 
 exports.listAllBlocks = (req, res) => {
-
-  // fs.readFile('../../M10Triplebank.geojson', function(err, M10){
-//   if(err){
-//   console.log("error in loading geojson");
-//   }
-//   console.log(M10);
-//   return M10;
-// })
+var block;
+fs.readFile('../../M10Triplebank.geojson', function(err, Blk){
+  if(err){
+  res.status(500).send(err);
+  }
+  console.log(Blk);
+  block =  Blk;
+})
 var a =  "get this working";
-res.status(200).json(a)
+res.status(200).json(block);
   
   // Article.$where('this.firstname === this.lastname')
   // Blocks.find({}, (err, article) => {
