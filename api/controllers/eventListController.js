@@ -24,7 +24,9 @@ exports.listAllBlocks = (req, res) => {
 //   console.log(M10);
 //   return M10;
 // })
-  return "get this working"
+var a =  "get this working";
+res.status(200).json(a)
+  
   // Article.$where('this.firstname === this.lastname')
   // Blocks.find({}, (err, article) => {
   //   if (err) {
