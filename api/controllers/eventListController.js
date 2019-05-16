@@ -17,7 +17,7 @@ exports.listAllLists = (req, res) => {
 
 exports.listAllBlocks = (req, res) => {
 var block;
-fs.readFile('test.txt', function(err, Blk){
+fs.readFile('D:\\home\\site\\wwwroot\\api\\controllers\\test.txt', function(err, Blk){
   if(err){
   res.status(500).send(err);
   }
