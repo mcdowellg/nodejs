@@ -87,13 +87,15 @@ exports.listAllTasks = (req, res) => {
 
 exports.updateTask = (req, res) => {
   Tasks.remove(
-    { }, (err, item) => {
-
+    {})
+    let newTask = new Task(req.body);
+    newTask.save((err, event) => {
       if (err) {
         res.status(500).send(err);
       }
-      res.status(200).json("deleted successfully");
+      res.status(201).json(event);
     });
+   
   }
 
 exports.readTask = (req, res) => {
