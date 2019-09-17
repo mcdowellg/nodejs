@@ -83,7 +83,29 @@ exports.listAllTasks = (req, res) => {
     }
     res.status(200).json(article);
   });
+};
 
+exports.updateTask = (req, res) => {
+  List.findById(
+    { _id: req.params.eventid }, (err, item) => {
+          item.set(req.body);
+      
+      item.save((err, article) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).json(article);
+    });
+  })}
+
+exports.readTask = (req, res) => {
+    console.log(req.params.eventid);
+    List.findById(req.params.eventid, (err, article) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).json(article);
+    });
 };
 
 exports.listAllGPS = (req, res) => {

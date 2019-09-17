@@ -24,9 +24,9 @@ module.exports = function(app) {
   .get(articleList.listAllLists)
 
   app
-  .route("/list/:eventid")
-  .get(articleList.readList)
-  .patch(articleList.updateList)
+  .route("/task/:eventid")
+  .get(articleList.readTask)
+  .patch(articleList.updateTask)
 
   app
   .route("/gps")
