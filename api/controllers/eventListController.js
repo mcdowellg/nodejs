@@ -86,17 +86,17 @@ exports.listAllTasks = (req, res) => {
 };
 
 exports.updateTask = (req, res) => {
-  Tasks.findOneAndUpdate(
-    { _id: req.params.eventid }, 
-    req.body,
-    {new:true},
-    (err, item) => {
+  Tasks.findById(
+    { _id: req.params.eventid }, (err, item) => {
+          item.set(req.body);
+      
+      item.save((err, article) => {
       if (err) {
         res.status(500).send(err);
       }
       res.status(200).json(article);
     });
-  }
+  })}
 
 exports.readTask = (req, res) => {
     console.log(req.params.eventid);
