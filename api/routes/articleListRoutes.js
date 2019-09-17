@@ -12,7 +12,7 @@ module.exports = function(app) {
   app
   .route("/tasks")
   .get(articleList.listAllTasks)
-  .post(articleList.createNewTask);
+  .post(articleList.updateTask);
 
   app
   .route("/event/:eventid")

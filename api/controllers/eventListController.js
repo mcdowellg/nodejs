@@ -86,16 +86,14 @@ exports.listAllTasks = (req, res) => {
 };
 
 exports.updateTask = (req, res) => {
-
-    let newTask = new Task(req.body);
-    newTask.save((err, event) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-      res.status(201).json(event);
-    });
-   
-  }
+  let newTask = new Task(req.body);
+  newTask.save((err, event) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(201).json(event);
+  });
+};
 
 exports.readTask = (req, res) => {
     console.log(req.params.eventid);
