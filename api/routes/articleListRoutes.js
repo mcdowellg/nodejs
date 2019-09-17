@@ -24,7 +24,7 @@ module.exports = function(app) {
   .get(articleList.listAllLists)
 
   app
-  .route("/list")
+  .route("/list/:eventid")
   .get(articleList.readList)
   .patch(articleList.updateList)
 
