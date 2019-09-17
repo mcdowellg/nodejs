@@ -87,7 +87,7 @@ exports.listAllTasks = (req, res) => {
 
 exports.updateTask = (req, res) => {
   Tasks.remove(
-    { }, (err, item) => {
+    { _id: req.params.eventid }, (err, item) => {
 
       if (err) {
         res.status(500).send(err);
