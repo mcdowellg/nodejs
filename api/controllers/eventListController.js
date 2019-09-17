@@ -86,17 +86,15 @@ exports.listAllTasks = (req, res) => {
 };
 
 exports.updateTask = (req, res) => {
-  Tasks.findById(
-    { _id: req.params.eventid }, (err, item) => {
-          item.set(req.body);
-      
-      item.save((err, article) => {
+  Tasks.remove(
+    { }, (err, item) => {
+
       if (err) {
         res.status(500).send(err);
       }
-      res.status(200).json(article);
+      res.status(200).json("deleted successfully");
     });
-  })}
+  }
 
 exports.readTask = (req, res) => {
     console.log(req.params.eventid);
