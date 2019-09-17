@@ -17,7 +17,7 @@ exports.listAllLists = (req, res) => {
 };
 
 exports.updateList = (req, res) => {
-  Event.findById(
+  List.findById(
     { _id: req.params.eventid }, (err, item) => {
           item.set(req.body);
       
@@ -31,7 +31,7 @@ exports.updateList = (req, res) => {
 
 exports.readList = (req, res) => {
     console.log(req.params.eventid);
-    Event.findById(req.params.eventid, (err, article) => {
+    List.findById(req.params.eventid, (err, article) => {
       if (err) {
         res.status(500).send(err);
       }
