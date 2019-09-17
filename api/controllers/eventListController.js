@@ -29,6 +29,16 @@ exports.updateList = (req, res) => {
     });
   })}
 
+exports.readList = (req, res) => {
+    console.log(req.params.eventid);
+    Event.findById(req.params.eventid, (err, article) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).json(article);
+    });
+};
+
 exports.listAllBlocks = (req, res) => {
 var block;
 fs.readFile('D:/home/site/wwwroot/api/controllers/GeojsonBlocks/PRWNZVineyards.geojson', "utf8", function(err, Blk){

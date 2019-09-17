@@ -25,7 +25,8 @@ module.exports = function(app) {
 
   app
   .route("/list")
-  .get(articleList.updateList)
+  .get(articleList.readList)
+  .patch(articleList.updateList)
 
   app
   .route("/gps")
