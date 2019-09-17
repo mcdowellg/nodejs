@@ -86,8 +86,7 @@ exports.listAllTasks = (req, res) => {
 };
 
 exports.updateTask = (req, res) => {
-  Tasks.remove(
-    {})
+
     let newTask = new Task(req.body);
     newTask.save((err, event) => {
       if (err) {
