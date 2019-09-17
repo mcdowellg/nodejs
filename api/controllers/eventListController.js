@@ -86,7 +86,7 @@ exports.listAllTasks = (req, res) => {
 };
 
 exports.updateTask = (req, res) => {
-  List.findById(
+  Tasks.findById(
     { _id: req.params.eventid }, (err, item) => {
           item.set(req.body);
       
@@ -100,7 +100,7 @@ exports.updateTask = (req, res) => {
 
 exports.readTask = (req, res) => {
     console.log(req.params.eventid);
-    List.findById(req.params.eventid, (err, article) => {
+    Tasks.findById(req.params.eventid, (err, article) => {
       if (err) {
         res.status(500).send(err);
       }
