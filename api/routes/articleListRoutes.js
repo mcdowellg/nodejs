@@ -24,6 +24,10 @@ module.exports = function(app) {
   .get(articleList.listAllLists)
 
   app
+  .route("/list")
+  .get(articleList.updateList)
+
+  app
   .route("/gps")
   .get(articleList.listAllGPS)
   .post(articleList.createNewGPS);
