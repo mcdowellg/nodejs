@@ -15,6 +15,10 @@ module.exports = function(app) {
   .post(articleList.createNewTask);
 
   app
+  .route("/tasks/delete")
+  .get(articleList.deleteTask)
+
+  app
   .route("/event/:eventid")
   .get(articleList.readArticle)
   .patch(articleList.updateArticle)
@@ -26,7 +30,7 @@ module.exports = function(app) {
   app
   .route("/task/:eventid")
   .get(articleList.readTask)
-  .patch(articleList.updateTask)
+  
 
   app
   .route("/gps")

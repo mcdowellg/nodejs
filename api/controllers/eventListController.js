@@ -85,13 +85,12 @@ exports.listAllTasks = (req, res) => {
   });
 };
 
-exports.updateTask = (req, res) => {
-  let newTask = new Task(req.body);
-  newTask.save((err, event) => {
+exports.deleteTask = (req, res) => {
+  Tasks.remove({}, (err, article) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.status(201).json(event);
+    res.status(200).json(article);
   });
 };
 
