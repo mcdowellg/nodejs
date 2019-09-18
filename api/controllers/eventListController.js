@@ -136,7 +136,14 @@ exports.createNewGPS = (req, res) => {
 };
 
 exports.createNewTask = (req, res) => {
-  Tasks.insertMany([{"this":1,"another":"dfjfjdfdf"},{"that":1,"other":"dadadada"}])
+  Tasks.insertMany([{"this":1,"another":"dfjfjdfdf"},{"that":1,"other":"dadadada"}],
+  (err, event) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(201).json(event);
+  }
+  )
 };
 
 exports.updateArticle = (req, res) => {
