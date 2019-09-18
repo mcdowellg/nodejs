@@ -136,7 +136,7 @@ exports.createNewGPS = (req, res) => {
 };
 
 exports.createNewTask = (req, res) => {
-  Tasks.insertMany([{"this":1,"another":"dfjfjdfdf"},{"that":1,"other":"dadadada"}],
+  Tasks.insertOne({"this":1,"another":"dfjfjdfdf"},
   (err, event) => {
     if (err) {
       res.status(500).send(err);
