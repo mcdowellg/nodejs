@@ -136,7 +136,7 @@ exports.createNewGPS = (req, res) => {
 };
 
 exports.createNewTask = (req, res) => {
-  Tasks.insert(req.body, (err, event) => {
+  Tasks.insert(req, (err, event) => {
     if (err) {
       res.status(500).send(err);
     }
