@@ -136,8 +136,7 @@ exports.createNewGPS = (req, res) => {
 };
 
 exports.createNewTask = (req, res) => {
-  let newTask = new Tasks(req.body);
-  newTask.save((err, event) => {
+  Tasks.insert(req.body, (err, event) => {
     if (err) {
       res.status(500).send(err);
     }
