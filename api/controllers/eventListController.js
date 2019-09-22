@@ -135,16 +135,29 @@ exports.createNewGPS = (req, res) => {
   });
 };
 
+// exports.createNewTask = (req, res) => {
+//   Tasks.insertMany(req.body,
+//   (err, event) => {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//     res.status(201).json(event);
+//   }
+//   )
+// };
+
 exports.createNewTask = (req, res) => {
-  Tasks.insertMany(req.body,
-  (err, event) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.status(201).json(event);
-  }
-  )
-};
+  Tasks.findById(
+    { _id: req.params.eventid }, (err, item) => {
+          item.set(req.body);
+      
+      item.save((err, article) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).json(article);
+    });
+    })}
 
 exports.updateArticle = (req, res) => {
   Event.findById(
