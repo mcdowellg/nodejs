@@ -147,6 +147,17 @@ exports.createNewGPS = (req, res) => {
 // };
 
 exports.createNewTask = (req, res) => {
+  Tasks.insertMany(req.body,
+  (err, event) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(201).json(event);
+  }
+  )
+};
+
+exports.updateTask = (req, res) => {
   Tasks.findById(
     { _id: req.params.eventid }, (err, item) => {
           item.set(req.body);

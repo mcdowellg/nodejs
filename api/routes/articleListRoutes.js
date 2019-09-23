@@ -30,6 +30,7 @@ module.exports = function(app) {
   app
   .route("/task/:eventid")
   .get(articleList.readTask)
+  .post(articleList.updateTask)
   
 
   app
