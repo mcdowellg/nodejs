@@ -182,13 +182,13 @@ exports.updateTask = (req, res) => {
     })}
 
 exports.updateTaskColour = (req, res) => {
-  Tasks.findById(
+  TasksColour.findById(
         { _id: req.params.eventid }, (err, item) => {
               item.set(req.body);
           
           item.save((err, article) => {
           if (err) {
-            res.status(500).send(err);
+            res.status(500).send(article);
           }
           res.status(200).json(article);
     });
