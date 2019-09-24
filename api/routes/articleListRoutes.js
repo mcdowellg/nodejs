@@ -15,6 +15,11 @@ module.exports = function(app) {
   .post(articleList.createNewTask);
 
   app
+  .route("/tasksColour")
+  .get(articleList.listAllTasksColour)
+  .post(articleList.createNewTask);
+
+  app
   .route("/tasks/delete")
   .get(articleList.deleteTask)
 
@@ -31,7 +36,11 @@ module.exports = function(app) {
   .route("/task/:eventid")
   .get(articleList.readTask)
   .post(articleList.updateTask)
-  
+
+  app
+  .route("/taskColour/:eventid")
+  .get(articleList.readTask)
+  .post(articleList.updateTaskColour)
 
   app
   .route("/gps")

@@ -2,6 +2,7 @@ const Event = require("../models/Event");
 const List = require("../models/List");
 const GPS = require("../models/GPS");
 const Tasks = require("../models/Tasks");
+const TasksColour = require("../models/TasksColour");
 const fs = require('fs');
 // const M11 = require("../../M11Triplebank.geojson");
 
@@ -78,6 +79,16 @@ exports.listAllEvents = (req, res) => {
 exports.listAllTasks = (req, res) => {
   // Article.$where('this.firstname === this.lastname')
   Tasks.find({}, (err, article) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(200).json(article);
+  });
+};
+
+exports.listAllTasksColour = (req, res) => {
+  // Article.$where('this.firstname === this.lastname')
+  TasksColour.find({}, (err, article) => {
     if (err) {
       res.status(500).send(err);
     }
@@ -167,6 +178,19 @@ exports.updateTask = (req, res) => {
         res.status(500).send(err);
       }
       res.status(200).json(article);
+    });
+    })}
+
+exports.updateTaskColour = (req, res) => {
+  Tasks.findById(
+        { _id: req.params.eventid }, (err, item) => {
+              item.set(req.body);
+          
+          item.save((err, article) => {
+          if (err) {
+            res.status(500).send(err);
+          }
+          res.status(200).json(article);
     });
     })}
 
