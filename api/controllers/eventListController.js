@@ -188,7 +188,7 @@ exports.updateTaskColour = (req, res) => {
           
           item.save((err, article) => {
           if (err) {
-            res.status(500).send(article);
+            res.status(500).send(err);
           }
           res.status(200).json(article);
     });
